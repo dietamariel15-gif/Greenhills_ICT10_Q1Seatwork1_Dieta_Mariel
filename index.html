@@ -8,6 +8,10 @@
     <title>Mariel Dieta - Python Data Types</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- PyScript -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css">
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
 </head>
 
 <body>
@@ -20,62 +24,135 @@
             ICT 10 - Q1 Seatwork 1
         </p>
 
+        <!-- Python Variables -->
+        <py-script>
+
+# String data type
+name = "Mariel Dieta"
+
+# Integer data type
+age = 15
+
+# Float data type
+height160 = 160.02
+
+# List data type
+countries_to_visit = ["Japan", "South Korea", "Paris"]
+
+# Boolean data type
+student_type = True
+
+# Dictionary data type
+student_info = {
+    "color": "Pink",
+    "car_brand": "Porsche",
+    "shoe_size": 7,
+    "best_friend": "Wynn, Pia, Kim, Gwen"
+}
+
+# Set data type
+favorite_fruits = {
+    "Rambutan",
+    "Lansones",
+    "Watermelon",
+    "Pineapple",
+    "Mango"
+}
+
+# Tuple data type
+weekdays = (
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+)
+
+        </py-script>
+
+
         <div class="card">
             <h2>String</h2>
-            <p><strong>Name:</strong> Mariel Dieta</p>
+            <p><strong>Name:</strong> <span id="name"></span></p>
             <p>Data type: String</p>
         </div>
 
+
         <div class="card">
             <h2>Integer</h2>
-            <p><strong>Age:</strong> 15</p>
+            <p><strong>Age:</strong> <span id="age"></span></p>
             <p>Data type: Integer</p>
         </div>
 
+
         <div class="card">
             <h2>Float</h2>
-            <p><strong>Height:</strong> 160.02 cm</p>
+            <p><strong>Height:</strong> <span id="height"></span> cm</p>
             <p>Data type: Float</p>
         </div>
+
 
         <div class="card">
             <h2>List</h2>
             <p><strong>Countries I Want to Visit:</strong></p>
-            <p>Japan, South Korea, Paris</p>
+            <p id="countries"></p>
             <p>Data type: List</p>
         </div>
 
+
         <div class="card">
             <h2>Boolean</h2>
-            <p><strong>New Student:</strong> True</p>
+            <p><strong>New Student:</strong> <span id="student"></span></p>
             <p>Data type: Boolean</p>
         </div>
 
+
         <div class="card">
             <h2>Dictionary</h2>
-            <p><strong>Favorite Color:</strong> Pink</p>
-            <p><strong>Car Brand:</strong> Porsche</p>
-            <p><strong>Shoe Size:</strong> 7</p>
-            <p><strong>Best Friends:</strong> Wynn, Pia, Kim, Gwen</p>
+            <p><strong>Favorite Color:</strong> <span id="color"></span></p>
+            <p><strong>Car Brand:</strong> <span id="car"></span></p>
+            <p><strong>Shoe Size:</strong> <span id="shoe"></span></p>
+            <p><strong>Best Friends:</strong> <span id="friend"></span></p>
             <p>Data type: Dictionary</p>
         </div>
+
 
         <div class="card">
             <h2>Set</h2>
             <p><strong>Favorite Fruits:</strong></p>
-            <p>Rambutan, Lansones, Watermelon, Pineapple, Mango</p>
+            <p id="fruits"></p>
             <p>Data type: Set</p>
         </div>
+
 
         <div class="card">
             <h2>Tuple</h2>
             <p><strong>Days of the Week:</strong></p>
-            <p>
-                Monday, Tuesday, Wednesday, Thursday,
-                Friday, Saturday, Sunday
-            </p>
+            <p id="days"></p>
             <p>Data type: Tuple</p>
         </div>
+
+
+        <!-- Display Python variables on webpage -->
+        <py-script>
+from js import document
+
+document.getElementById("name").innerText = name
+document.getElementById("age").innerText = age
+document.getElementById("height").innerText = height160
+document.getElementById("countries").innerText = ", ".join(countries_to_visit)
+document.getElementById("student").innerText = student_type
+
+document.getElementById("color").innerText = student_info["color"]
+document.getElementById("car").innerText = student_info["car_brand"]
+document.getElementById("shoe").innerText = student_info["shoe_size"]
+document.getElementById("friend").innerText = student_info["best_friend"]
+
+document.getElementById("fruits").innerText = ", ".join(favorite_fruits)
+document.getElementById("days").innerText = ", ".join(weekdays)
+        </py-script>
 
     </div>
 
